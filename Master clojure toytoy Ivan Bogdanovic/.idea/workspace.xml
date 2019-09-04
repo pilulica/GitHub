@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8d008b9b-5476-4a85-8f07-9229b0ea33ae" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/public/css/toytoy.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/public/css/toytoy.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/project/project/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/project/project/pom.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +22,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1QMot7n34g3dHECKvJ0zlCb5uS5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -30,6 +32,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ib185054\Desktop\Master ToyToy git\Master clojure toytoy Ivan Bogdanovic\resources\public\css" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Master FON\Alati i metode softverskog inzenjerstva-CLOJURE\Master clojure toytoy Ivan Bogdanovic" />
     </key>
@@ -111,6 +116,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="masterDetails">
     <states>
