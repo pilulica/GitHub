@@ -105,9 +105,22 @@
     (toytoydb/delete toyid))
   (ring/redirect "/"))
 
+(defn listOfToys []
+  (layout/common
+      [:h1 {:class "title"}
+       " ToyToy "]
+      [:h2 {:class "title-second"}
+       "List of toys:"]
+      [:a {:href "/add" :class "button-add move-right" :style "float: left"} "Add new"]
+      [:br]
+      [:br]
+     (show-all)
+    ))
+
 (defroutes home-home
            (GET "/" [](indexpage))
            (GET "/details/:toyid" [toyid] (show-toy (toytoydb/find toyid)))
            (GET "/add" [](insert_or_update))
            (POST "/save" [toyname toytype toyprice toynumbers toyav toyid](save toyname toytype toyprice toynumbers toyav toyid))
-           (GET "/delete/:toyid" [toyid](delete toyid)))
+           (GET "/delete/:toyid" [toyid](delete toyid))
+           (GET "/listOfToys" [] (listOfToys)))
