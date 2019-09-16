@@ -98,7 +98,7 @@
              (submit-button {:onclick "return validate()"} (if (nil? toyid)"Save" "Update"))
              "&nbsp&nbsp"
              [:hr])
-    [:a {:href "/" :class "button-add move-right" :style "float: left"} "Home"]
+    [:a {:href (if (nil? toyid)  "/" "/listOfToys")  :class "button-add move-right" :style "float: left"} "Back"]
     ))
 
 (defn show-toy [toy]
