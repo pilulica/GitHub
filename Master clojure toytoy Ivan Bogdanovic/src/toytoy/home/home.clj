@@ -12,6 +12,29 @@
   (if (= answer true) "yes" "no"))
 
 (defn show-all []
+  [:table {:class "table table-striped"}
+   [:thead
+    [:tr {:class "table tr"}
+     [:th "Toy"]
+     [:th "Type"]
+     [:th "Price"]
+     [:th "Number of sold toys"]
+     [:th "Available"]]]
+   (into [:tbody ]
+         (for [toy (toytoydb/read-table)]
+           [:tr {:class "table tr"}
+            [:td {:style "font-style: italic" }(:toyname toy)]
+            [:td (:toytype toy )]
+            [:td (:toyprice toy) "  RSD"]
+            [:td (:toynumbers toy)]
+            [:td (convert-answer (:toyav toy))]
+            [:td {:style "border-bottom: 0px"} [:a {:class "btn btn-primary" :href (str "/updateButton/" (h (:toyid toy)))} "Update"]]]))])
+
+(defn delete-page []
+  (layout/common
+    [:br]
+    [:h1 "Delete Toy"]
+    [:br]
   [:table {:class "table-main"}
    [:thead
     [:tr
@@ -28,18 +51,10 @@
             [:td (:toyprice toy) "  RSD"]
             [:td (:toynumbers toy)]
             [:td (convert-answer (:toyav toy))]
-            [:td {:style "border-bottom: 0px"} [:a {:class "button-add" :href (str "/details/" (h (:toyid toy)))} "Details"]]]))])
-
+            [:td {:style "border-bottom: 0px"} [:a {:class "button-add" :href (str "/delete/" (h (:toyid toy)))} "Delete"]]]))]))
 (defn indexpage []
   (layout/common
-    ;  [:h1 {:class "title"}
-    ;   " ToyToy "]
-    ;  [:h2 {:class "title-second"}
-    ;   "List of toys:"]
-    ;  [:a {:href "/add" :class "button-add move-right" :style "float: left"} "Add new"]
-    ;  [:br]
-    ;  [:br]
-    ; (show-all)
+    ;index page describe
     ))
 
 
@@ -82,10 +97,8 @@
               ]
              (submit-button {:onclick "return validate()"} (if (nil? toyid)"Save" "Update"))
              "&nbsp&nbsp"
-             (if (not (nil? toyid))
-               [:td [:a {:class "button-add" :href (str "/delete/"toyid)} "Delete"]])
              [:hr])
-    [:a {:href "/" :class "button-add move-right" :style "float: left"} "Back"]
+    [:a {:href "/" :class "button-add move-right" :style "float: left"} "Home"]
     ))
 
 (defn show-toy [toy]
@@ -103,7 +116,7 @@
 (defn delete [toyid]
   (if (not (= toyid 0))
     (toytoydb/delete toyid))
-  (ring/redirect "/"))
+  (ring/redirect "/delete"))
 
 (defn listOfToys []
   (layout/common
@@ -111,7 +124,6 @@
        " ToyToy "]
       [:h2 {:class "title-second"}
        "List of toys:"]
-      [:a {:href "/add" :class "button-add move-right" :style "float: left"} "Add new"]
       [:br]
       [:br]
      (show-all)
@@ -119,8 +131,9 @@
 
 (defroutes home-home
            (GET "/" [](indexpage))
-           (GET "/details/:toyid" [toyid] (show-toy (toytoydb/find toyid)))
+           (GET "/updateButton/:toyid" [toyid] (show-toy (toytoydb/find toyid)))
            (GET "/add" [](insert_or_update))
            (POST "/save" [toyname toytype toyprice toynumbers toyav toyid](save toyname toytype toyprice toynumbers toyav toyid))
            (GET "/delete/:toyid" [toyid](delete toyid))
-           (GET "/listOfToys" [] (listOfToys)))
+           (GET "/listOfToys" [] (listOfToys))
+           (GET "/delete" [] (delete-page)))
