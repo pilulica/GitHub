@@ -28,14 +28,14 @@
             [:td (:toyprice toy) "  RSD"]
             [:td (:toynumbers toy)]
             [:td (convert-answer (:toyav toy))]
-            [:td {:style "border-bottom: 0px"} [:a {:class "btn btn-primary" :href (str "/updateButton/" (h (:toyid toy)))} "Update"]]]))])
+            [:td {:style "border-bottom: 0px"} [:a {:class "btn btn-success" :href (str "/updateButton/" (h (:toyid toy)))} "Update"]]]))])
 
 (defn delete-page []
   (layout/common
     [:br]
-    [:h1 "Delete Toy"]
+    [:h1 {:class "details-title"} "Delete Toy"]
     [:br]
-  [:table {:class "table-main"}
+  [:table {:class "table table-stripped"}
    [:thead
     [:tr
      [:th "Toy"]
@@ -51,7 +51,7 @@
             [:td (:toyprice toy) "  RSD"]
             [:td (:toynumbers toy)]
             [:td (convert-answer (:toyav toy))]
-            [:td {:style "border-bottom: 0px"} [:a {:class "button-add" :href (str "/delete/" (h (:toyid toy)))} "Delete"]]]))]))
+            [:td {:style "border-bottom: 0px"} [:a {:class "btn btn-danger" :href (str "/delete/" (h (:toyid toy)))} "Delete"]]]))]))
 (defn indexpage []
   (layout/common
     ;index page describe
@@ -95,10 +95,10 @@
                [:td (check-box {:class "text-form"} "toyav" toyav)]
                ]
               ]
-             (submit-button {:onclick "return validate()"} (if (nil? toyid)"Save" "Update"))
+             (submit-button {:onclick "return validate()" :class "btn btn-success"} (if (nil? toyid)"Save" "Update"))
              "&nbsp&nbsp"
              [:hr])
-    [:a {:href (if (nil? toyid)  "/" "/listOfToys")  :class "button-add move-right" :style "float: left"} "Back"]))
+    [:a {:href (if (nil? toyid)  "/" "/listOfToys")  :class "btn btn-warning" :style "float: left"} "Back"]))
 
 (defn show-toy [toy]
   (insert_or_update (:toyid toy) (:toyname toy) (:toytype toy) (:toyprice toy) (:toynumbers toy) (:toyav toy)))
@@ -122,7 +122,7 @@
       [:h1 {:class "title"}
        " ToyToy "]
       [:h2 {:class "title-second"}
-       "List of toys:"]
+       "List of toys"]
       [:br]
       [:br]
      (show-all)
