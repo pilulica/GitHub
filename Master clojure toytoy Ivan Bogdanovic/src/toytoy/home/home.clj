@@ -14,7 +14,7 @@
 (defn show-all []
   [:table {:class "table table-striped"}
    [:thead
-    [:tr {:class "table tr"}
+    [:tr
      [:th "Toy"]
      [:th "Type"]
      [:th "Price"]
@@ -22,7 +22,7 @@
      [:th "Available"]]]
    (into [:tbody ]
          (for [toy (toytoydb/read-table)]
-           [:tr {:class "table tr"}
+           [:tr
             [:td {:style "font-style: italic" }(:toyname toy)]
             [:td (:toytype toy )]
             [:td (:toyprice toy) "  RSD"]
@@ -60,7 +60,7 @@
 
 (defn insert_or_update [& [toyid toyname toytype toyprice toynumbers toyav]]
   (layout/common
-    [:h2 {:class "details-title"} (if (nil? toyid) "Add new toy:" "Update toy:")]
+     [:h2 {:class "details-title"} (if (nil? toyid) "Add new toy" "Update toy")]
     (form-to {:toyid "frm"}
              [:post "/save"]
 
@@ -98,8 +98,7 @@
              (submit-button {:onclick "return validate()"} (if (nil? toyid)"Save" "Update"))
              "&nbsp&nbsp"
              [:hr])
-    [:a {:href (if (nil? toyid)  "/" "/listOfToys")  :class "button-add move-right" :style "float: left"} "Back"]
-    ))
+    [:a {:href (if (nil? toyid)  "/" "/listOfToys")  :class "button-add move-right" :style "float: left"} "Back"]))
 
 (defn show-toy [toy]
   (insert_or_update (:toyid toy) (:toyname toy) (:toytype toy) (:toyprice toy) (:toynumbers toy) (:toyav toy)))

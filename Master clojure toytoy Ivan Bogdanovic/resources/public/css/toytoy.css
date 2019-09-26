@@ -18,7 +18,9 @@ body {
 .title {
 	margin-top: 0px;
 	padding-top: 30px;
-	color:chartreuse;
+	color:white;
+	font-size:24px;
+	font-weight:bold;
 }
 
 .title-second {
@@ -44,22 +46,16 @@ body {
 	background: linear-gradient(lightgray, white);
 }
 
-.table-main {
-	width: 95%;
-	border-collapse: collapse;
-	margin: 10px;
+.table thead tr th {
+    color: green;
+    background-color:lightgray;
+    font-weight:bold;
+    font-size:18px;
 }
-
-.table-main thead tr th {
-	border: 1px solid #30352f;
-        padding-top: 5px;
-        background-color: green;
-}
-
-.table-main tbody tr td {
-padding-top: 10px;
-    border-bottom: 1px solid lightgray;
-    background-color: #2c615e;
+.table tbody tr td {
+    color:blue;
+    background-color:white;
+    font-weight:bold;
 }
 
 .table-details {
@@ -67,7 +63,11 @@ padding-top: 10px;
 	margin-left: 20%;
 	margin-right: 20%;
 	margin-bottom: 30px;
-	color:lightgreen;
+    color: #FF4500;
+    text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
+                 0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
+                 0 0 40px #A5F1FF;
+    font-weight:bold;
 }
 
 .table-details tr td input{
@@ -80,6 +80,10 @@ padding-top: 10px;
 	margin-top: 0px;
 	padding-top: 30px;
 	margin-bottom: 40px;
+	color: #D0F8FF;
+    ext-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF,
+                 0 0 20px #A5F1FF, 0 0 30px #A5F1FF,
+                 0 0 40px #A5F1FF;
 }
 
 hr {
