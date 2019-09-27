@@ -59,7 +59,7 @@ body {
     font-size:18px;
 }
 .table tbody tr td {
-    color:blue;
+    color:#FF4500;
     background-color:white;
     font-weight:bold;
 }
@@ -80,7 +80,7 @@ body {
 	padding: 5px;
 	margin-top: 10px;
 	border-radius: 3px;
-	color:#FF8C00;
+	color:black;
 	font-weight:bold;
 }
 

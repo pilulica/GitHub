@@ -23,7 +23,6 @@
        [:a {:class "dropdown-item" :href "/delete"} "Delete Toys"]
        ]
       ]
-     [:li {:class "nav-item dropdown"}
-      [:a {:class "nav-link dropdown-toggle" :href "/" :id "navbarDropdownMenuLink" :data-toggle "dropdown" :aria-hashpopup "true" :aria-expanded "false"} "Picture Of Toys"]]
+      [:a {:class "nav-link" :href "/" } "Picture Of Toys"]]
 ]
-    ]])
+    ])

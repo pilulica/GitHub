@@ -11,6 +11,7 @@
      (include-js "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
      (include-js "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
      (include-css "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+     (include-js "/js/jquery.slides.js")
      (include-css "/css/toytoy.css")
      (include-js "/js/validation.js")]
     [:body
