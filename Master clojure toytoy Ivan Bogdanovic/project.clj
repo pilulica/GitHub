@@ -9,7 +9,8 @@
                  [ring-server "0.3.1"]
                  [ring/ring-core "1.6.1"]
                  [org.clojure/java.jdbc "0.2.3"]
-                 [mysql/mysql-connector-java "5.1.18"]]
+                 [mysql/mysql-connector-java "5.1.18"]
+                 [de.ubercode.clostache/clostache "1.4.0"]]
   :plugins [[lein-ring "0.9.7"]]
   :ring {:handler toytoy.handler/app}
   :profiles
