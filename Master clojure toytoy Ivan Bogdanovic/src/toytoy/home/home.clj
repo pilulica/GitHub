@@ -1,5 +1,6 @@
 (ns toytoy.home.home
   (:require [compojure.core :refer :all]
+                              [clostache.parser :as clostache]
                               [toytoy.view.layout :as layout]
                               [toytoy.databaseConn.dbconf :as toytoydb]
                               [clojure.string :as str]
@@ -127,6 +128,23 @@
       [:br]
      (show-all)
     ))
+(defn read-template [template-name]
+  (slurp (clojure.java.io/resource
+           (str "mustachePages/" template-name ".mustache"))))
+
+(defn render-template [template-file params]
+  (clostache/render (read-template template-file) params))
+
+(defn pictureOfToys []
+  (layout/common
+    [:h1 {:class "title"}
+     " ToyToy "]
+    [:h2 {:class "title-second"}
+     "Picture of Toys"]
+    [:br]
+    [:br]
+(render-template "pictureOfToys" {})
+    ))
 
 (defroutes home-home
            (GET "/" [](indexpage))
@@ -135,4 +153,5 @@
            (POST "/save" [toyname toytype toyprice toynumbers toyav toyid](save toyname toytype toyprice toynumbers toyav toyid))
            (GET "/delete/:toyid" [toyid](delete toyid))
            (GET "/listOfToys" [] (listOfToys))
-           (GET "/delete" [] (delete-page)))
+           (GET "/delete" [] (delete-page))
+           (GET "/pictureOfToys" [] (pictureOfToys)))

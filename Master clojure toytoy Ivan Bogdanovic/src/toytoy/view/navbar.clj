@@ -23,6 +23,6 @@
        [:a {:class "dropdown-item" :href "/delete"} "Delete Toys"]
        ]
       ]
-      [:a {:class "nav-link" :href "/" } "Picture Of Toys"]]
+      [:a {:class "nav-link" :href "/pictureOfToys" } "Picture Of Toys"]]
 ]
     ])
